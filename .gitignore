@@ -5,13 +5,13 @@ using namespace std;
 int main()
 
 {
-int a,b,r;
+int a,b;
 char op, op1;
-
+int r;
 cin >> a;
 cin >> op;
 
-if (op == '>') {cin >> op1; 
+if (op == '>') {cin >> op1;
   if (op1 == '>') {
   cin >> b;
   r = a>>b;
@@ -42,9 +42,10 @@ else if(op == '*'){cin >> b;
   cout << "result:" <<r;
 }
 
-else if(op == '/'){cin >> b; if (b!=0) {r = a/b;
-    } if (b=0) {cout << 'На ноль делить нельзя';}
-  cout << "result:" << r;
+else if(op == '/'){cin >> b;
+    if (b==0) {cout << "На ноль делить нельзя"; return -1; }
+    r = a/b;
+    cout << "result:" << r;
 }
 
 else if(op == '^'){cin >> b;
@@ -66,8 +67,10 @@ else if(op == '|'){cin >> b;
   r = a|b;
   cout << "result:" <<r;
 }
+else cout << "error";
 
-system("pause");
+//system("pause");
+    cin.get();
 
 return 0;
 }
