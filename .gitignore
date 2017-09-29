@@ -1,32 +1,73 @@
-# Prerequisites
-*.d
+include <iostream>
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+using namespace std;
 
-# Precompiled Headers
-*.gch
-*.pch
+int main()
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+{
+int a,b,r;
+char op, op1;
 
-# Fortran module files
-*.mod
-*.smod
+cin >> a;
+cin >> op;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+if (op == '>') {cin >> op1; 
+  if (op1 == '>') {
+  cin >> b;
+  r = a>>b;
+  cout << "result:" << r;}
+  else cout << "Введен неправильный знак";
+}
 
-# Executables
-*.exe
-*.out
-*.app
+else if(op == '<') {cin >> op1;
+  if (op1 == '<') {
+  cin >> b;
+  r = a<<b;
+  cout << "result:" << r;}
+  else cout << "Введен неправильный знак";
+}
+
+if(op == '+'){cin >> b;
+  r = a+b;
+  cout << "result:" << r;
+}
+
+else if(op == '-'){cin >> b;
+  r = a-b;
+  cout << "result:" <<r;
+}
+
+else if(op == '*'){cin >> b;
+  r = a*b;
+  cout << "result:" <<r;
+}
+
+else if(op == '/'){cin >> b; if (b!=0) {r = a/b;
+    } if (b=0) {cout << 'На ноль делить нельзя';}
+  cout << "result:" << r;
+}
+
+else if(op == '^'){cin >> b;
+  r = a^b;
+  cout << "result:" <<r;
+}
+
+else if(op == '%'){cin >> b;
+  r = a%b;
+  cout << "result:" <<r;
+}
+
+else if(op == '&'){cin >> b;
+  r = a&b;
+  cout << "result:" <<r;
+}
+
+else if(op == '|'){cin >> b;
+  r = a|b;
+  cout << "result:" <<r;
+}
+
+system("pause");
+
+return 0;
+}
